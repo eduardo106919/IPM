@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="game">
+        <div id="board">
+            <div class="slots" v-for="(element, index) in board" v-on:click="selectCell(index)">
+                <p>{{ element }}</p>
+            </div>
+        </div>
+
+        <button id="reset" v-on:click="resetGame">Reset</button>
+        <h1 id="winner">{{ winner }}</h1>
+    </div>
+
+    <script type="text/javascript" src="tic-tac-toe.js"></script>
+</body>
+
+</html>
