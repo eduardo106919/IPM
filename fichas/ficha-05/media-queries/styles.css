@@ -268,7 +268,7 @@ body {
   cursor: pointer;
 }
 
-@media (width <= 850px) {
+@media (width <=850px) {
   #app {
     grid-template-areas:
       "nav"
@@ -276,17 +276,19 @@ body {
       "categories"
       "gallery"
       "footer";
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
-  #main, #categories, #gallery {
+  #main,
+  #categories,
+  #gallery {
     margin-left: 20px;
     margin-right: 20px;
   }
 
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
 
   #app {
     min-width: 300px;
