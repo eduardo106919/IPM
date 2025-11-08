@@ -1,190 +1,219 @@
 :root {
-  --background-color: #ECEEEC;
-  --accent-color: #7DF6B4;
-  --accent-color-dark: #77d5a1;
-  --light-color: #FFF;
-  --dark-color: #000;
-  --text-secondary-color: #3F3F3F;
-  --border-color: #4D4D4D;
+    --background-color: #ECEEEC;
+    --accent-color: #7DF6B4;
+    --accent-color-dark: #77d5a1;
+    --light-color: #FFF;
+    --dark-color: #000;
+    --text-secondary-color: #3F3F3F;
+    --border-color: #4D4D4D;
 }
 
 html,
 body {
-  margin: 0;
-  font-family: 'Anek Latin';
+    margin: 0;
+    font-family: 'Anek Latin';
 }
 
 .card {
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: var(--light-color);
+    padding: 20px;
+    background-color: var(--light-color);
 }
+
+
 
 #app {
-  display: grid;
-  grid-template-columns: 1fr 3fr 2fr 1fr;
-  grid-template-rows: 50px min-content min-content auto 100px;
-  grid-template-areas:
-    "nav nav nav nav"
-    ". main side . "
-    ". main section ."
-    ". main . ."
-    "footer footer footer footer";
-  background-color: var(--background-color);
-  gap: 20px;
+    display: grid;
+    background-color: var(--background-color);
+    grid-template-areas:
+        "nav    nav    nav        nav"
+        ".      main   categories ."
+        ".      main   gallery    ."
+        ".      main   .          ."
+        "footer footer footer     footer";
+    grid-template-rows: 50px auto auto 1fr 100px;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    gap: 20px;
 }
 
-.scats {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.scats li {
-  padding: 0.5rem 1.5rem;
-  margin-right: 20px;
-  margin-top: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  background-color: var(--background-color);
-}
-
-#nav {
-  grid-area: nav;
-  display: flex;
-}
-
-#nav p {
-  padding: 1rem;
-  margin: 0;
-  background-color: var(--light-color);
-  font-weight: 600;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-
-  /* soft transition for hover */
-  transition: background-color 0.2s ease;
-}
-
-#nav p:hover {
-  background-color: var(--accent-color);
-}
-
-#nav img {
-  height: 50px;
-  width: 50px;
-}
-
-#nav #signup {
-  background-color: var(--accent-color);
-}
-
-#nav #signup:hover {
-  color: var(--accent-color);
-  background-color: var(--dark-color);
-}
-
-.autenticacao {
-  display: flex;
-  margin-left: auto;
+#footer {
+    grid-area: footer;
 }
 
 #main {
-  grid-area: main;
+    grid-area: main;
 }
 
-.side {
-  grid-area: side;
-}
-
-.list {
-  padding: 0;
-  list-style: none;
-}
-
-.list li {
-  padding: 0.5em 0 0.5em 0;
-  cursor: pointer;
-
-  /* soft transition for hover */
-  transition: background-color 0.2s ease;
-}
-
-.list li:hover {
-  background-color: var(--accent-color-dark);
-}
-
-.card h3,
-.card h3+p {
-  margin: 0;
-  color: var(--text-secondary-color);
-}
-
-.side.card {
-  margin-bottom: 0px;
-}
-
-.section {
-  grid-area: section;
+#categories {
+    grid-area: categories;
 }
 
 #gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2px;
-
-  justify-items: center;
-  align-items: center;
+    grid-area: gallery;
 }
 
-.gallery-pic {
-  width: 100%;
-  height: 100%;
-    
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery-pic img {
-  width: 100%;
-  max-height: 100%;
-    
-  object-fit: cover;
-}
-
-#plus {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  margin: 0;
-
-  width: 50px;
-  height: 50px;
-
-  border-radius: 25px;
-  background-color: var(--accent-color);
-
-  background-image: url("imgs/plus.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px 24px;
-
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-
-  transition: all 0.3s ease;
+#nav {
+    grid-area: nav;
 }
 
 
 
 #footer {
-  grid-area: footer;
-  background-color: var(--light-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+}
+
+.categories-list li {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+
+
+.categories-list li:hover {
+    color: var(--accent-color-dark);
+}
+
+
+
+.article {
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--text-secondary-color);
+}
+
+.date {
+    margin: 0;
+    color: var(--text-secondary-color);
+}
+
+
+
+.categories-tag-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.category-tag-item {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+}
+
+
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all ease-in 0.3s;
+}
+
+.nav-item:hover {
+    background-color: var(--accent-color);
+}
+
+#sign-up {
+    background-color: var(--accent-color);
+}
+
+#sign-up:hover {
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.nav-container {
+    display: flex;
+}
+
+
+
+#create {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    border-radius: 25px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#gallery-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    justify-items: center;
+}
+
+.gallery-item {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+}
+
+
+
+.gallery-item-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0.5rem 0;
+    color: var(--light-color);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.gallery-item-container:hover .overlay {
+    display: flex;
 }
